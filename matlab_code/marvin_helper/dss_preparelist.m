@@ -15,7 +15,7 @@ if NYUonly
     alltest = testSeq;
     filename = 'boxes_NYU';
 else
-    load('/n/fs/modelnet/SUN3DV2/prepareGT/traintestSUNRGBD/allsplit.mat')
+    load(fullfile(SUNRGBDtoolboxdir,'traintestSUNRGBD/allsplit.mat'))
     filename = 'boxes_SUNrgbd';
 end
 

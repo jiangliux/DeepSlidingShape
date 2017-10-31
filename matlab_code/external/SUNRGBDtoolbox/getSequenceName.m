@@ -1,6 +1,6 @@
 function sequenceName = getSequenceName(thispath,dataRoot)
     if ~exist('dataRoot','var'),
-        dataRoot = '/n/fs/sun3d/data/';
+        dataRoot = '/data1/';
     end
     sequenceName  = thispath(length(dataRoot):end);
     while sequenceName(1)=='/',sequenceName =sequenceName(2:end);end

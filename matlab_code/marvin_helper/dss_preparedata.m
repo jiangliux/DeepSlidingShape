@@ -3,9 +3,9 @@ function dss_preparedata(id)
 opt = dss_initPath();
 seg_dir         = opt.seg_dir;
 PCindexList_dir = opt.data_root;
-load(fullfile(cnn3d_model.conf.SUNrgbd_toolbox,'Metadata/SUNRGBDMeta.mat'));
+load(fullfile(opt.SUNrgbd_toolbox,'Metadata/SUNRGBDMeta.mat'));
 
-NYUonly =1;
+NYUonly = 0;
 if NYUonly
     load('./external/SUNRGBDtoolbox/traintestSUNRGBD/test_kv1NYU.mat');
     load('./external/SUNRGBDtoolbox/traintestSUNRGBD/train_kv1NYU.mat');

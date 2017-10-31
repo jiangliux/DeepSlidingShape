@@ -11,9 +11,13 @@ function downloadData(path2save,urlroot,filetype)
              sequenceName = SUNRGBDMeta(i).sequenceName;
              src_fullpath = fullfile(urlroot,[sequenceName filetype]);
              dest_fullpath = [fullfile(path2save,sequenceName) filetype];
+             if exist(dest_fullpath,'file')
+                fprintf('skipng image %s...\n',dest_fullpath)
+                continue;
+             end
              ind = find(dest_fullpath=='/');
              mkdir(dest_fullpath(1:ind(end)-1));
-             cmd = sprintf('/usr/local/bin/wget -O %s %s', dest_fullpath,src_fullpath);
+             cmd = sprintf('wget -O %s %s', dest_fullpath,src_fullpath);
              system(cmd);
          end
 end
